@@ -1,24 +1,25 @@
 // Shopping List App
-// v5.0
+// v4.0
 //
 // WEB-233: Introduction to Javascript
 // Spring 2020
 //
 // Troy Sawtelle
 //
-// 2020-05-14
-//
-// Final Project Version
+// 2020-05-12 
 
 var CookieList = 'sawtellelist';
 var CookieCart = 'sawtellecart';
+var TaxRate = 0.01;
 
 var MyItems = 
 {
   ItemName:"",
   ItemPrice:"",
-  ItemQiv:", x",
-  ItemQty:""
+  ItemDiv:", ",
+  ItemQty:"",
+  ItemDiv2:", ",
+  ItemReq:""
 };
 
 var ShoppingList = [];
@@ -26,102 +27,102 @@ var ShoppingCart = [];
 
 window.onload = function() 
 {
-  PopulateShoppingListOnload();
-  DisplayShoppingList();
-  PopulateShoppingCartOnload();
-  DisplayShoppingCart();
+//  PopulateShoppingListOnload();
+//  DisplayShoppingList();
+//  PopulateShoppingCartOnload();
+//  DisplayShoppingCart();
 }
 
 function PopulateShoppingListOnload()
 {
-  ShoppingList = [];
-  y = [];
-  ItemSplit = [];
-  y = ReadListCookie();
-  y = RemoveUnwanted(y); 
-  y = y.split('|');
-  if (y) {
-    ShoppingList = y;
-   }
+//  ShoppingList = [];
+//  y = [];
+//  ItemSplit = [];
+//  y = ReadListCookie();
+//  y = RemoveUnwanted(y); 
+//  y = y.split('|');
+//  if (y) {
+//    ShoppingList = y;
+//   }
 }
 
 function PopulateShoppingCartOnload()
 {
-  ShoppingCart = [];
-  y = [];
-  ItemSplit = [];
-  y = ReadCartCookie();
-  y = RemoveUnwanted(y); 
-  y = y.split('|');
-  if (y) {
-    ShoppingCart = y;
-   }
+//  ShoppingCart = [];
+//  y = [];
+//  ItemSplit = [];
+//  y = ReadCartCookie();
+//  y = RemoveUnwanted(y); 
+//  y = y.split('|');
+//  if (y) {
+//    ShoppingCart = y;
+//   }
 }
 
 function ReadListCookie()
 {
-    var nameEQ = CookieList + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
+//    var nameEQ = CookieList + "=";
+//    var ca = document.cookie.split(';');
+//    for(var i=0;i < ca.length;i++) {
+//        var c = ca[i];
+//        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+//        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+//    }
+//    return null;
 }
 
 function ReadCartCookie()
 {
-    var nameEQ = CookieCart + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
+//    var nameEQ = CookieCart + "=";
+//    var ca = document.cookie.split(';');
+//    for(var i=0;i < ca.length;i++) {
+//        var c = ca[i];
+//        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+//        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+//    }
+//    return null;
 }
 
 function SaveListCookie()
 {
-  DeleteCookie(CookieList);
-    var date = new Date();
+//  DeleteCookie(CookieList);
+//    var date = new Date();
     //keeps for a year
-    date.setTime(date.getTime() + Number(365) * 3600 * 1000);
-    document.cookie = CookieList + "=" + escape(ShoppingList.join('|')) + "; path=/;expires = " + date.toGMTString();
+//    date.setTime(date.getTime() + Number(365) * 3600 * 1000);
+////    document.cookie = CookieList + "=" + escape(ShoppingList.join('|')) + "; path=/;expires = " + date.toGMTString();
 }
 
 function SaveCartCookie()
 {
-  DeleteCookie(CookieCart);
-    var date = new Date();
+//  DeleteCookie(CookieCart);
+//    var date = new Date();
     //keeps for a year
-    date.setTime(date.getTime() + Number(365) * 3600 * 1000);
-    document.cookie = CookieCart + "=" + escape(ShoppingCart.join('|')) + "; path=/;expires = " + date.toGMTString();
+//    date.setTime(date.getTime() + Number(365) * 3600 * 1000);
+//    document.cookie = CookieCart + "=" + escape(ShoppingCart.join('|')) + "; path=/;expires = " + date.toGMTString();
 }
 
 function DeleteCookie(name)
 {
-  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+//  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 function RemoveUnwanted(str)
 {
-  if ((str===null) || (str===''))  
-       return false;  
-  else  
-    str = str.toString();  
-    str = str.replace(/%20/g, "");
-    str = str.replace(/%24/g, "$"); 
-    str = str.replace(/%28/g, " (");
-    str = str.replace(/%29/g, ") ");
-    str = str.replace(/%2C/g, ", ");
-    str = str.replace(/%7C/g, " | ");
-  return str.replace(/[^\x20-\x7E]/g, '');  
+//  if ((str===null) || (str===''))  
+//       return false;  
+//  else  
+//    str = str.toString();  
+//    str = str.replace(/%20/g, "");
+//    str = str.replace(/%24/g, "$"); 
+//    str = str.replace(/%28/g, " (");
+//    str = str.replace(/%29/g, ") ");
+//    str = str.replace(/%2C/g, ", ");
+//    str = str.replace(/%7C/g, " | ");
+//  return str.replace(/[^\x20-\x7E]/g, '');  
 
 }
 
-function AddListItem(item,cost,qty) 
+function AddListItem(item,cost,qty,req) 
 {
   var WantedItem="";
   var ListItemCount=0;
@@ -129,6 +130,7 @@ function AddListItem(item,cost,qty)
   MyItems.ItemName=item;
   MyItems.ItemPrice=cost;
   MyItems.ItemQty=qty;
+  MyItems.ItemReq=req;
 
   if (MyItems.ItemName != "" && MyItems.ItemPrice !="" )
   {
@@ -152,6 +154,7 @@ function AddListItem(item,cost,qty)
       }
        ListItemCount++;
     }
+//    alert(WantedItem);
     ShoppingList.push(WantedItem);
   }
   DisplayShoppingList();
@@ -159,10 +162,10 @@ function AddListItem(item,cost,qty)
   ClearFocus();
   document.getElementById("AddToList").disabled = false;
   document.getElementById("AddToCart").disabled = false;
-  SaveListCookie();
+//  SaveListCookie();
 }
 
-function AddCartItem(item,cost,qty) 
+function AddCartItem(item,cost,qty,req) 
 {
   var WantedItem="";
   var ListItemCount=0;
@@ -170,6 +173,7 @@ function AddCartItem(item,cost,qty)
   MyItems.ItemName=item;
   MyItems.ItemPrice=cost;
   MyItems.ItemQty=qty;
+  MyItems.ItemReq=req;
 
   if (MyItems.ItemName != "" && MyItems.ItemPrice !="" )
   {
@@ -200,7 +204,7 @@ function AddCartItem(item,cost,qty)
   ClearFocus();
   document.getElementById("AddToList").disabled = false;
   document.getElementById("AddToCart").disabled = false;
-  SaveCartCookie();
+//  SaveCartCookie();
 }
 
 function ClearFocus()
@@ -208,6 +212,7 @@ function ClearFocus()
   document.getElementById("item").value = "";
   document.getElementById("cost").value = "";
   document.getElementById("qty").value = "";
+  document.getElementById("req").value = "";
   document.getElementById("item").focus();
 }
 
@@ -220,6 +225,7 @@ function DisplayShoppingList()
   {
 //    FullList = FullList + ShoppingList[ListItemCounter] + '&nbsp;&nbsp;' + '<input class="button3" name="delete" type="button" value="Remove Item" onclick="DeleteListItem(' + ListItemCounter + ')" />' + '&nbsp;&nbsp;' + '<input class="button4" name="change" type="button" value="Edit Item" onclick="ChangeListItem(' + ListItemCounter + ')" />' + '&nbsp;&nbsp;' + '<label><input class="button5" name="move" type="checkbox" value="Move to Cart" onclick="MoveListItem(' + ListItemCounter + ')" />Add to Cart<label>' + '&nbsp;&nbsp;' + '<br>';
   
+//  alert(ShoppingList[ListItemCounter]);
   FullList = FullList + ShoppingList[ListItemCounter] + '&nbsp;&nbsp;' + '<input class="button3" name="delete" type="button" value="Remove Item" onclick="DeleteListItem(' + ListItemCounter + ')" />' + '<label><input class="button5" name="move" type="checkbox" value="Move to Cart" onclick="MoveListItem(' + ListItemCounter + ')" />Add to Cart<label>' + '&nbsp;&nbsp;' + '<br>';
   }
   document.getElementById("MyList").innerHTML = FullList;
@@ -245,7 +251,7 @@ function DeleteListItem(ItemNumber)
   ShoppingList.splice(ItemNumber, 1);
   DisplayShoppingList();
   DisplayShoppingCart();
-  SaveListCookie();
+//  SaveListCookie();
 }
 
 function DeleteCartItem(ItemNumber)
@@ -254,7 +260,7 @@ function DeleteCartItem(ItemNumber)
   ShoppingCart.splice(ItemNumber, 1);
   DisplayShoppingList();
   DisplayShoppingCart();
-  SaveCartCookie();
+//  SaveCartCookie();
 }
 
 function ChangeListItem(ItemNumber)
@@ -267,16 +273,18 @@ function ChangeListItem(ItemNumber)
   MyItems.ItemName=ItemSplit[0].trim();
   MyItems.ItemPrice=ItemSplit[1].replace("$ ", "").replace(/^0+/, "");
   MyItems.ItemQty=ItemSplit[2].replace("x", "").replace(/^0+/, "");
+//  MyItems.ItemQty=ItemSplit[3].replace("", "").replace(/^0+/, "");
 
   document.getElementById("item").value = MyItems.ItemName;
   document.getElementById("cost").value = MyItems.ItemPrice;
   document.getElementById("qty").value = MyItems.ItemQty;
+  document.getElementById("req").value = MyItems.ItemReq;
 
   DeleteListItem(ItemNumber);
 
   DisplayShoppingList();
   DisplayShoppingCart();
-  SaveListCookie();
+//  SaveListCookie();
 }
 
 function ChangeCartItem(ItemNumber)
@@ -287,16 +295,18 @@ function ChangeCartItem(ItemNumber)
   MyItems.ItemName=ItemSplit[0].trim();
   MyItems.ItemPrice=ItemSplit[1].replace("$ ", "").replace(/^0+/, "");
   MyItems.ItemQty=ItemSplit[2].replace("x", "").replace(/^0+/, "");
+//  MyItems.ItemReq=ItemSplit[3].replace(":", "").replace(/^0+/, "");
 
   document.getElementById("item").value = MyItems.ItemName;
   document.getElementById("cost").value = MyItems.ItemPrice;
   document.getElementById("qty").value = MyItems.ItemQty;
+  document.getElementById("req").value = MyItems.ItemReq;
 
   DeleteCartItem(ItemNumber);
 
   DisplayShoppingList();
   DisplayShoppingCart();
-  SaveCartCookie();
+//  SaveCartCookie();
 }
 
 function MoveListItem(ItemNumber)
@@ -307,19 +317,21 @@ function MoveListItem(ItemNumber)
   MyItems.ItemName=ItemSplit[0].trim();
   MyItems.ItemPrice=ItemSplit[1].replace("$ ", "").replace(/^0+/, "");
   MyItems.ItemQty=ItemSplit[2].replace("x", "").replace(/^0+/, "");
+//  MyItems.ItemReq=ItemSplit[3].replace(":", "").replace(/^0+/, "");
 
   document.getElementById("item").value = MyItems.ItemName;
   document.getElementById("cost").value = MyItems.ItemPrice;
   document.getElementById("qty").value = MyItems.ItemQty;
+  document.getElementById("req").value = MyItems.ItemReq;
 
   
-  AddCartItem(MyItems.ItemName,MyItems.ItemPrice,MyItems.ItemQty);
+  AddCartItem(MyItems.ItemName,MyItems.ItemPrice,MyItems.ItemQty,MyItems.ItemReq);
 
   DeleteListItem(ItemNumber);
 
   DisplayShoppingList();
   DisplayShoppingCart();
-  SaveListCookie();
+//  SaveListCookie();
 }
 
 function MoveCartItem(ItemNumber)
@@ -330,17 +342,19 @@ function MoveCartItem(ItemNumber)
   MyItems.ItemName=ItemSplit[0].trim();
   MyItems.ItemPrice=ItemSplit[1].replace("$ ", "").replace(/^0+/, "");
   MyItems.ItemQty=ItemSplit[2].replace("x", "").replace(/^0+/, "");
+//  MyItems.ItemReq=ItemSplit[3].replace(":", "").replace(/^0+/, "");
 
   document.getElementById("item").value = MyItems.ItemName;
   document.getElementById("cost").value = MyItems.ItemPrice;
   document.getElementById("qty").value = MyItems.ItemQty;
+  document.getElementById("req").value = MyItems.ItemReq;
 
   
-  AddListItem(MyItems.ItemName,MyItems.ItemPrice,MyItems.ItemQty);
+  AddListItem(MyItems.ItemName,MyItems.ItemPrice,MyItems.ItemQty,MyItems.ItemReq);
 
   DeleteCartItem(ItemNumber);
 
   DisplayShoppingList();
   DisplayShoppingCart();
-  SaveCartCookie();
+//  SaveCartCookie();
 }
