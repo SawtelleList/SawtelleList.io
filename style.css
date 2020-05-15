@@ -15,7 +15,7 @@ div.name_div
   position: absolute;
   width: 200px;
   text-align: center;
-  top: 240px;
+  top: 260px;
 }
 
 div.cost_div
@@ -23,7 +23,7 @@ div.cost_div
   position: absolute;
   width: 160px;
   text-align: center;
-  top: 240px;
+  top: 260px;
   left: 240px;
 }
 
@@ -32,7 +32,7 @@ div.qty_div
   position: absolute;
   width: 60px;
   text-align: center;
-  top: 240px;
+  top: 260px;
   left: 430px;
 }
 
@@ -41,7 +41,7 @@ div.req_div
   position: absolute;
   width: 160px;
   text-align: center;
-  top: 240px;
+  top: 260px;
   left: 520px;
 }
 
