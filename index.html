@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel='stylesheet' href='lib/style.css'>
+    <script src='lib/script.js'></script>
+  </head>
+
+  <body>
+    <h1>
+      <center>
+        Troy Sawtelle
+      </center>
+    </h1>
+    <h1>
+      <center>
+        Week 12
+        <br>
+        Shopping List / Shopping Cart
+        <br>
+        v4.0
+      </center>
+    </h1>
+    <hr>
+    <br>
+    <div class='outer'>
+      <div class='name_div'>
+        <input type='text' id='item' name='item' />
+        <br>
+        <label>
+          Name: 
+        </label>
+      </div>
+      <div class='cost_div'>
+        <input type='text' id='cost' name='cost' />
+        <br>
+        <label>
+          Cost: 
+        </label>
+      </div>
+      <div class='qty_div'>
+        <input type='text' id='qty' name='qty' />
+        <br>
+        <label>
+          Qty: 
+        </label>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class='outer'>
+      <input id='AddToList' class='button1' name='submit' type='button' value='Add Item to List' onclick='AddListItem(item.value, cost.value, qty.value)' />
+      &nbsp;&nbsp;&nbsp;
+      <input id='AddToCart' class='button2' name='submit' type='button' value='Add Item to Cart' onclick='AddCartItem(item.value, cost.value, qty.value)' />
+    </div>
+    <br>
+    <br>
+    <div class='ListItems'>
+      <span style='text-decoration: underline;'>
+        Shopping List Items
+      </span>
+      <br>
+      <p id='MyList'></p>
+    </div>
+    <br>
+    <div class='CartItems'>
+      <span style='text-decoration: underline;'>
+        Shopping Cart Items
+      </span>
+      <p id='MyCart'></p>
+    </div>
+  </body>
+</html>
