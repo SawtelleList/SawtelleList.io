@@ -6,7 +6,7 @@ h1
 div.outer
 {
   position: absolute;
-  top: 280px;
+  top: 0px;
   width: 700px;
   height: 70px;
   text-align: center;
