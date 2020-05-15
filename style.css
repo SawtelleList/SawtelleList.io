@@ -12,36 +12,37 @@ div.outer
 
 div.name_div
 {
+  position: absolute;
   width: 200px;
   text-align: center;
-  top: 0px;
+  top: 240px;
 }
 
 div.cost_div
 {
-  position: relative;
+  position: absolute;
   width: 160px;
   text-align: center;
-  top: -56px;
+  top: 240px;
   left: 240px;
 }
 
 div.qty_div
 {
-  position: relative;
+  position: absolute;
   width: 60px;
   text-align: center;
-  top: -112px;
-  left: 440px;
+  top: 240px;
+  left: 430px;
 }
 
 div.req_div
 {
-  position: relative;
-  width: 60px;
+  position: absolute;
+  width: 160px;
   text-align: center;
-  top: 0px;
-  left: 5400px;
+  top: 240px;
+  left: 520px;
 }
 
 input[type=text]
